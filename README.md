@@ -11,6 +11,7 @@ model/
   data/         Atomic ledger + assumption tables (CSV) — source of truth.
   build_model.py  Generates the workbook from data/.
   requirements.txt  Pinned Python dependencies (e.g. openpyxl).
+  homeworks_plan_analysis.py  Standalone Growth-vs-Enterprise plan analysis (not a pipeline stage).
   financial-model.xlsx  Generated output — gitignored, regenerated on demand, never hand-edited.
 reference/    Raw source data (CRM exports, P&L, bank statements, overhead contracts, Gusto payroll exports) — ground truth, never edited.
 .gitignore    Excludes the generated workbook and transient build artifacts.
@@ -28,7 +29,11 @@ The five ledgers in `model/data/` are built and kept current by a fixed sequence
 6. **`model/reconcile_payroll_relay.py`** — full-history gate: payroll totals vs. Relay bank transactions.
 7. **`model/build_model.py`** — all five ledgers → `financial-model.xlsx`.
 
-See `reference/CATALOG-UPDATE.md`, `reference/REVENUE-UPDATE.md`, `reference/PAYROLL-UPDATE.md`, and `reference/STRIPE-UPDATE.md` for when and how to refresh the underlying raw sources (`reference/`) before re-running this pipeline.
+See `reference/CATALOG-UPDATE.md`, `reference/REVENUE-UPDATE.md`, `reference/PAYROLL-UPDATE.md`, `reference/STRIPE-UPDATE.md`, and `reference/HOMEWORKS-PRICING-UPDATE.md` for when and how to refresh the underlying raw sources (`reference/`) before re-running this pipeline.
+
+## Analysis scripts (outside the pipeline)
+
+`model/homeworks_plan_analysis.py` is **not** one of the seven stages above — it builds no ledger and writes no file. It evaluates the Homeworks Growth-vs-Enterprise switch point (`CONTEXT.md` Follow-Up #30) from `model/data/assumptions.csv`'s `saas_pricing` constants plus real card volume from the Stripe export, and prints where the business currently sits against three independent triggers. `model/build_model.py` imports the same functions to render the workbook's "Plan Tier Analysis" sheet, so the two cannot disagree. Run it directly with `python model/homeworks_plan_analysis.py`.
 
 ## Start here
 

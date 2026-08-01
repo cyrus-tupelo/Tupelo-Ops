@@ -37,6 +37,18 @@ with one sheet per derived view, per CONTEXT.md Section 9:
                         event=invoice rows; payment rows carry no service
                         classification (their subcategory is a match-
                         confidence tag, not a service name).
+  - Plan Tier Analysis -- Homeworks Growth-vs-Enterprise switch-point
+                        analysis (CONTEXT.md Follow-Up #30), imported from
+                        model/homeworks_plan_analysis.py rather than
+                        recomputed here. Surfaces assumptions.csv's
+                        saas_pricing/REFERENCE rows -- vendor-published
+                        pricing facts sourced from a dated snapshot in
+                        reference/ -- which would otherwise be loaded but
+                        rendered nowhere. Presents three independent
+                        triggers rather than one break-even number, and
+                        states on its face which inputs (contact count,
+                        seat count, outbound SMS volume) exist in no repo
+                        file and must be pulled from Homeworks.
   - Reconciliation    -- scoped to what the ledger actually claims to cover:
                         revenue invoice total vs. the known $28,316.57
                         anchor; revenue payment classification completeness
@@ -74,6 +86,11 @@ from datetime import date, datetime
 
 from openpyxl import Workbook
 from openpyxl.styles import Font
+
+# The Growth-vs-Enterprise switch-point math lives in its own module and is
+# imported rather than reimplemented, so the workbook sheet and that script's
+# CLI output cannot drift apart (CONTEXT.md Follow-Up #30).
+from homeworks_plan_analysis import build_report_rows
 
 # openpyxl's writer unconditionally re-stamps docProps/core.xml's `modified`
 # field to datetime.now() inside save() (openpyxl/writer/excel.py), which
@@ -738,6 +755,27 @@ def normalize_xlsx_for_determinism(path):
             zout.writestr(info, data)
 
 
+SECTION_HEADING_RE = re.compile(
+    r"^(Homeworks Growth|CURRENT STATE|TRIGGER \d|ACTUAL CARD VOLUME|"
+    r"OUTBOUND SMS VOLUME|BLOCKED INPUTS)"
+)
+
+
+def build_plan_tier_analysis(ws, assumptions):
+    """Render the Homeworks Growth-vs-Enterprise switch-point analysis.
+
+    Exists because assumptions.csv's new saas_pricing/REFERENCE rows would
+    otherwise be loaded but never surfaced anywhere in the workbook -- a
+    silent gap, per CLAUDE.md's rule that new assumption categories must
+    appear in a sheet. The computation itself is imported, not repeated.
+    """
+    for row in build_report_rows(assumptions):
+        ws.append(row if row else [None])
+        if row and isinstance(row[0], str) and SECTION_HEADING_RE.match(row[0]):
+            for cell in ws[ws.max_row]:
+                cell.font = Font(bold=True)
+
+
 def main():
     ledgers = load_ledgers()
     months = all_months(ledgers)
@@ -752,6 +790,7 @@ def main():
     build_quarterly_rollups(wb.create_sheet("Quarterly Rollups"), ledgers, months)
     build_revenue_by_service(wb.create_sheet("Revenue by Service"), ledgers)
     build_revenue_by_customer(wb.create_sheet("Revenue by Customer"), ledgers)
+    build_plan_tier_analysis(wb.create_sheet("Plan Tier Analysis"), assumptions)
     build_reconciliation(wb.create_sheet("Reconciliation"), ledgers)
     build_raw_ledger(wb.create_sheet("Raw Ledger"), ledgers)
 

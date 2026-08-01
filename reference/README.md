@@ -55,6 +55,16 @@ The `(metadata)`-suffixed columns (`stripeProcessingFee`, `customerProcessingFee
 
 Item-vs-service classification (which of the 21 catalog rows are billable materials vs. labor) lives in `model/data/catalog-type-map.csv` — a script-input derivative, not a raw source, so it's in `model/data/` rather than here.
 
+## Homeworks published pricing
+
+**Active pricing snapshot: `homeworks-pricing-2026-07-31.md`** — the vendor's own published price list for all three plan tiers (Solo / Growth / Enterprise), transcribed verbatim from `https://www.home.works/pricing` on 2026-07-31. Covers plan prices at both billing cadences, included-user counts, additional-seat rate, contact caps, card-processing rates, SMS segment pricing, and the ACH fee cap. See `reference/HOMEWORKS-PRICING-UPDATE.md` for the refresh procedure.
+
+**This section's pointer label is deliberately `Active pricing snapshot`, not `Active snapshot`.** The latter is the service catalog's pointer above, which `model/parse_invoices.py:118` regex-searches for across this entire file, taking the first match — a second `**Active snapshot:**` line would silently redirect the invoice parser to the wrong file. Keep the labels distinct. This section is also placed *after* the Service catalog section so the catalog's pointer is reached first regardless.
+
+Unlike every other source here, this one is **not an export** — it is a live vendor marketing page read by hand, so it has no coverage window, no machine-readable original, and no gate. A stale snapshot fails silently rather than erroring. The binding refresh trigger is therefore behavioural, not scheduled: re-read the page in the same session any decision under `CONTEXT.md` Follow-Up #30 is actually made.
+
+Snapshots are the authority for **tiers the business is not on** (Enterprise pricing, the annual-billing option) and for structural facts (seat counts, contact caps, published rates). They are **not** the authority for what the business actually pays — that is `model/data/ledger-overhead.csv`'s `Homeworks (CRM)` / `crm-subscription` rows, summarized in `reference/fixed-overhead.md`. `model/data/assumptions.csv` deliberately stores no Growth `$299` constant for this reason; see the snapshot's "Relationship to other files" section.
+
 ## Canonical record & change protocol
 
 This table is the **canonical** repo record of the Relay account map. It is also restated, as context, in `CONTEXT.md`'s Relay line. If the account structure ever changes: update this table and `CONTEXT.md`'s Relay line — the two live copies — and add a **new** `HISTORY.md` entry. Never edit H-026 or any past entry; H-026 is a frozen 2026-07-05 snapshot, not a live copy.
