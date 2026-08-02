@@ -25,7 +25,7 @@
 
 - **Measure:** raw business **bank balance**, as of the check-in date. Patient, interest-free debt (Xavier, owner) is **not** netted out — it imposes no due date or interest, so it functions as equity for hedging purposes.
 - **Target buffer: $6,000**, held as two functional components within one balance:
-  - **$4,000 — business operating reserve.** Hard floor; hedges revenue stalls. Below this, scaling commitments *and* debt repayment freeze until restored.
+  - **$4,000 — business operating reserve.** Hard floor; hedges revenue stalls. Below this, scaling commitments *and* debt repayment freeze until restored. **One named exemption (owner-decided 2026-08-02):** the Follow-Up #33 weekday mowing hire (Aug 1–15 `[ANCHOR]`) is a continuity/succession requirement, not discretionary scaling, and proceeds regardless of this floor. The floor amount itself is unchanged; only what counts as a "scaling commitment" was clarified.
   - **$2,000 — truck hedge.** Shock absorber for the truck (repair / rental bridge / replacement). Has **priority claim** on accumulating cash once the $4k floor is secured — build it ahead of discretionary spend, because the truck risk is live now.
 - **Sequencing:** reach $4k (~Sept — scaling waypoint) → next ~$2k of accumulation funds the truck hedge → at $6k, steady state.
 - **Truck event:** draws down the $2k hedge first. A balance falling from ~$6k toward $4k on a truck event is **expected absorption, not a breach.** Only a drop below $4k trips the wire.
@@ -62,6 +62,7 @@
 ### Aug 1–15
 - **[ANCHOR]** Acquire electric blower + extra tarps (leaf-season revenue; regulation-compliant). Budget spare batteries + charging rotation.
 - Backup lead identified; begin cross-training reps.
+- **[ANCHOR] Begin hiring the second (possibly third) weekday mowing crew member to work alongside Konji — as early as feasible, starting now; NOT gated by the $4,000 reserve floor; no later than Sep 16–30.** Targeted to the fall 2026 window so the hire is trained and supervised while the owner is still present, ahead of the January 2027 relocation. **Owner-decided 2026-08-02:** this hire is a **continuity/succession requirement, not discretionary scaling**, and is therefore **exempt** from the Cash Buffer Policy's below-$4,000 freeze on scaling commitments — a deliberate decision on a question that was explicitly raised, not a default or an oversight. **One hire serving two purposes** — new weekday mowing capacity *and* the role Anais currently fills alongside Konji — not two separate hires. Distinct from the backup-lead cross-training track above and its Oct 16–31 gate: that is redundancy for the *lead role*, this is crew *capacity* for recurring weekday mowing. Adds 1–2 Homeworks seats. See `CONTEXT.md` Follow-Up #33 (and #35 for the anticipated departure behind the dual purpose).
 - Saved routes configured in Homeworks for all recurring clients.
 
 ### Aug 16–31
@@ -70,13 +71,12 @@
 - Reserve approaching $4,000 target.
 
 ### Sep 1–15
-- **[GATE]** **Business reserve crosses $4,000 (~September)** — the precondition for any scaling or aggressive commitment. Until reached, no scaling commitments.
+- **[GATE]** **Business reserve crosses $4,000 (~September)** — the precondition for any scaling or aggressive commitment. Until reached, no scaling commitments — **except** the Follow-Up #33 weekday mowing hire (Aug 1–15 `[ANCHOR]`), owner-exempted 2026-08-02 as continuity, not scaling.
 - Once $4k is secured, the next ~$2k of accumulation funds the **truck hedge** (priority over discretionary spend) toward the $6k target buffer.
 - Lead-capture pool growing; reviews accumulating.
 
 ### Sep 16–30
 - Apprenticeship deepening; lead running routes under supervision.
-- **[ANCHOR] Begin hiring the second (possibly third) weekday mowing crew member to work alongside Konji** — targeted to the fall 2026 window specifically so the hire is trained and supervised while the owner is still present, ahead of the January 2027 relocation. Distinct from the Oct 16–31 backup-lead cross-training gate below: that is redundancy for the *lead role*, this is crew *capacity* for recurring weekday mowing. Adds 1–2 Homeworks seats. See `CONTEXT.md` Follow-Up #33.
 - Begin drafting fall pre-sell materials (spring 2027 agreements, locked rates, no prepay).
 - Landing page / work-request form live (target Oct).
 
@@ -84,7 +84,7 @@
 - **[ANCHOR]** **Fall pre-sell push begins (Oct–Nov)** — sign spring 2027 mowing agreements while competition is low and owner can canvass. This compensates for the owner's spring absence.
 - **[ANCHOR]** Order yard signs + truck branding (lead time); deploy signs on serviced lawns as they arrive.
 - Electric blower in service — leaf-removal revenue.
-- **[ANCHOR] Auto-insurance decision point (current 6-month term ends Oct 9, 2026):** decide whether to add Konji as an insured driver **before** the term ends — enabling insured owner-absent crew leadership and more supervised reps before the January 2027 relocation — or **wait** until renewal to optimize the current premium. Adding him is a coverage/liability prerequisite for owner-absent operation, not a convenience; the premium increase is **BLOCKED pending an insurer quote** (do not model a figure). Anais is already an insured driver and remains so — the same coverage logic covers any driver operating owner-absent. (See CONTEXT.md item J.)
+- **[ANCHOR] Auto-insurance decision point (current 6-month term ends Oct 9, 2026):** decide whether to add Konji as an insured driver **before** the term ends — enabling insured owner-absent crew leadership and more supervised reps before the January 2027 relocation — or **wait** until renewal to optimize the current premium. Adding him is a coverage/liability prerequisite for owner-absent operation, not a convenience; the premium increase is **BLOCKED pending an insurer quote** (do not model a figure). Anais is already an insured driver and remains so — the same coverage logic covers any driver operating owner-absent. (See CONTEXT.md item J.) **Broader question added 2026-08-02 — see `CONTEXT.md` Follow-Up #34:** if Anais leaves, she is the *only* insured driver besides the owner, so this decision point sits inside a wider driver-redundancy gap that it does **not** by itself resolve.
 
 ### Oct 16–31
 - **[GATE]** Backup lead **fully cross-trained** (redundancy established — not reliance on one person).
@@ -233,5 +233,9 @@ The real trajectory is materially different from the original planning table in 
 | 2026-06-17 | Cash buffer policy finalized | Netted reserve → raw bank balance; $4k reserve + $2k truck hedge = $6k target | Owner input: patient/interest-free debt treated as equity; truck hedge prioritized |
 | 2026-06-17 | Monthly targets reconciled to model | Profit & cash rows updated to recalculated values; diagnostic zeroed (done) | Model recalculation |
 | 2026-07-05 | Staleness audit corrections: Konji crew-lead decision marked resolved (3 locations); backup-lead search marked active; GBP status corrected to active/no-reviews-no-leads; added Job Costing activation anchor (end of July 2026) | Pending/underway → Resolved/Active; to-do → active-with-caveat; anchor added | `CONTEXT.md` Section 6 item B |
+| 2026-08-01 | Added Sep 16–30 `[ANCHOR]`: hire 2nd (possibly 3rd) weekday mowing crew member alongside Konji | (no prior item) → Sep 16–30 anchor | `CONTEXT.md` Follow-Up #33; `HISTORY.md` H-080 |
+| 2026-08-02 | Weekday-mowing-hire anchor moved earlier and retargeted; now framed as one hire covering both new capacity and Anais's role | Sep 16–30, "target fall 2026" → Sep 1–15, "as early as feasible once the $4,000 reserve gate clears; no later than Sep 16–30" | Owner input: wants it as early as feasible; Anais anticipated to leave. `CONTEXT.md` Follow-Ups #33/#35; `HISTORY.md` H-081 |
+| 2026-08-02 | Oct 1–15 auto-insurance anchor: pointer added to the broader driver-redundancy gap (no change to the decision itself) | Item J pointer only → item J + Follow-Up #34 | `CONTEXT.md` Follow-Up #34; `HISTORY.md` H-081 |
+| 2026-08-02 | **Owner decision — weekday-mowing hire EXEMPT from the $4,000 reserve freeze** (continuity/succession requirement, not discretionary scaling). Anchor moved again, out of the gated position; exemption noted in the Cash Buffer Policy and on the Sep 1–15 `[GATE]` so it is findable from the policy it modifies | Sep 1–15, "as early as feasible once the $4,000 reserve gate clears" → Aug 1–15, "as early as feasible, starting now; NOT gated by the $4,000 reserve floor; no later than Sep 16–30" | Owner decision 2026-08-02, resolving the open policy-interpretation question raised the same day. `CONTEXT.md` Follow-Up #33; `HISTORY.md` H-081. Reserve floor amount itself unchanged ($4,000) |
 
 *Add a row each time a target, date, or assumption changes. Preserve the original value so a moving baseline is always visible.*
