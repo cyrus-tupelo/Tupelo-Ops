@@ -1,17 +1,17 @@
 employee,role,effective_date,status,alias
-"Archuletta, Cyrus",Crew Member,,active,
+"Archuletta, Cyrus",Crew Member,,dismissed,
 "Beauvais, Anais",Crew Member,,active,
 "Beauvais, Cyrus",CEO,,active,
 "Beauvais, Xavier",Crew Lead,,active,
 "Beauvais, Xavier",Crew Member,2026-06-15,active,
 "Bunek, Parker",Crew Member,,active,
-"Cook, Jason",Crew Member,,unknown,
+"Cook, Jason",Crew Member,,dismissed,
 "Daschke, August",Crew Member,,dismissed,
 "Driscoll, Katherine",Landscape Consultant,,active,Katie
 "Gaspar, Caleb",Crew Member,,active,
 "Gorman, Konjinet",Crew Lead,,active,Konji
 "Kiflu, Rimon",Crew Member,,active,
-"Knauer, Nathaniel",Crew Member,,unknown,Nate
+"Knauer, Nathaniel",Crew Member,,active,Nate
 "Littlejohn, James",Crew Member,,dismissed,
 "Lordos, Zavier",Crew Member,,active,
 "Moore, Max",Crew Member,,active,

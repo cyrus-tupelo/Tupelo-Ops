@@ -76,6 +76,7 @@
 
 ### Sep 16–30
 - Apprenticeship deepening; lead running routes under supervision.
+- **[ANCHOR] Begin hiring the second (possibly third) weekday mowing crew member to work alongside Konji** — targeted to the fall 2026 window specifically so the hire is trained and supervised while the owner is still present, ahead of the January 2027 relocation. Distinct from the Oct 16–31 backup-lead cross-training gate below: that is redundancy for the *lead role*, this is crew *capacity* for recurring weekday mowing. Adds 1–2 Homeworks seats. See `CONTEXT.md` Follow-Up #33.
 - Begin drafting fall pre-sell materials (spring 2027 agreements, locked rates, no prepay).
 - Landing page / work-request form live (target Oct).
 

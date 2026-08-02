@@ -65,27 +65,43 @@ LEDGER_FIELDS = [
 # one of "active" / "dismissed" / "resigned" / "unknown" -- an explicit,
 # owner-confirmed employment-status flag, not inferred from payroll absence.
 # "unknown" is a real, distinct value, not a placeholder to avoid filling in --
-# it means a long payroll gap exists but the owner has NOT confirmed dismissal
-# (e.g. Cook, Knauer): do NOT guess "dismissed" for a long gap alone, the same
-# mistake H-071 corrected for Xavier's "departure" wording. Only set
-# "dismissed"/"resigned" on explicit owner confirmation (e.g. Littlejohn,
-# Daschke, H-071). For Xavier's two role-period rows, status describes his
+# it means a long payroll gap exists but the owner has NOT confirmed dismissal:
+# do NOT guess "dismissed" for a long gap alone, the same mistake H-071
+# corrected for Xavier's "departure" wording. Only set "dismissed"/"resigned"
+# on explicit owner confirmation (e.g. Littlejohn, Daschke, H-071; Archuletta,
+# Cook, H-080). For Xavier's two role-period rows, status describes his
 # current employment (active), not a per-period value -- there is no
 # indication either row's period should carry a different status.
+#
+# Roster settled 2026-08-01 (HISTORY.md H-080, closing CONTEXT.md Follow-Up #1):
+# Archuletta and Cook confirmed dismissed; no `unknown` row remains.
+# ONE ROW CARRIES A PENDING CONFIRMATION -- Knauer, Nathaniel. His "active" is
+# owner-OBSERVED (the owner directly witnessed him continuing to work), which is
+# stronger evidence than the "unknown" it replaces but is NOT the same as
+# independently verified: no Gusto export in reference/ yet covers a pay period
+# showing his recent activity. Treated per CLAUDE.md rule 5 as an owner-stated
+# fact awaiting its named prerequisite, the same way assumptions.csv's
+# anais_hourly_rate_pending is (H-070). reference/PAYROLL-UPDATE.md step 7
+# makes the next payroll refresh check and report this automatically -- do not
+# rely on anyone remembering to re-check it by hand. There is deliberately no
+# new CSV column for this: the schema stays employee/role/effective_date/
+# status/alias, and the pending flag lives in the refresh procedure, which is
+# where the check actually has to fire.
 ROLE_MAP_ROWS = [
-    {"employee": "Archuletta, Cyrus", "role": "Crew Member", "effective_date": "", "status": "active"},
+    {"employee": "Archuletta, Cyrus", "role": "Crew Member", "effective_date": "", "status": "dismissed"},
     {"employee": "Beauvais, Anais", "role": "Crew Member", "effective_date": "", "status": "active"},
     {"employee": "Beauvais, Cyrus", "role": "CEO", "effective_date": "", "status": "active"},
     {"employee": "Beauvais, Xavier", "role": "Crew Lead", "effective_date": "", "status": "active"},
     {"employee": "Beauvais, Xavier", "role": "Crew Member", "effective_date": "2026-06-15", "status": "active"},
     {"employee": "Bunek, Parker", "role": "Crew Member", "effective_date": "", "status": "active"},
-    {"employee": "Cook, Jason", "role": "Crew Member", "effective_date": "", "status": "unknown"},
+    {"employee": "Cook, Jason", "role": "Crew Member", "effective_date": "", "status": "dismissed"},
     {"employee": "Daschke, August", "role": "Crew Member", "effective_date": "", "status": "dismissed"},
     {"employee": "Driscoll, Katherine", "role": "Landscape Consultant", "effective_date": "", "status": "active"},
     {"employee": "Gaspar, Caleb", "role": "Crew Member", "effective_date": "", "status": "active"},
     {"employee": "Gorman, Konjinet", "role": "Crew Lead", "effective_date": "", "status": "active"},
     {"employee": "Kiflu, Rimon", "role": "Crew Member", "effective_date": "", "status": "active"},
-    {"employee": "Knauer, Nathaniel", "role": "Crew Member", "effective_date": "", "status": "unknown"},
+    # active = owner-OBSERVED, pending payroll confirmation -- see the note above.
+    {"employee": "Knauer, Nathaniel", "role": "Crew Member", "effective_date": "", "status": "active"},
     {"employee": "Littlejohn, James", "role": "Crew Member", "effective_date": "", "status": "dismissed"},
     {"employee": "Lordos, Zavier", "role": "Crew Member", "effective_date": "", "status": "active"},
     {"employee": "Moore, Max", "role": "Crew Member", "effective_date": "", "status": "active"},
